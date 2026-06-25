@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowRight, Book, CheckSquare, Calendar, Wrench, Wallet, Construction } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 const PROJECTS = [
   {
@@ -47,6 +48,10 @@ const PROJECTS = [
 export function Projects() {
   return (
     <div className="container mx-auto px-4 max-w-5xl py-12">
+      <Helmet>
+        <title>Proyek Digital | Digiken</title>
+        <meta name="description" content="Eksplorasi portofolio dan proyek digital dari Digiken. Aplikasi web, alat produktivitas, dan solusi teknologi yang dibangun." />
+      </Helmet>
       <div className="mb-12 cursor-default">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Proyek Digital</h1>
         <p className="text-lg text-muted-foreground max-w-2xl">

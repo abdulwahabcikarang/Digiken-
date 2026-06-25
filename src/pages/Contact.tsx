@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { ExternalLink, Github, Instagram, Link as LinkIcon, Mail, MessageCircle } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 export function Contact() {
   const CONTACT_LINKS = [
@@ -38,6 +39,10 @@ export function Contact() {
 
   return (
     <div className="container mx-auto px-4 max-w-2xl py-12">
+      <Helmet>
+        <title>Kontak | Digiken</title>
+        <meta name="description" content="Terhubung dengan Digiken. Hubungi via Email, WhatsApp, atau temukan kami di media sosial." />
+      </Helmet>
       <div className="text-center mb-12 cursor-default">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Terhubung</h1>
         <p className="text-lg text-muted-foreground">

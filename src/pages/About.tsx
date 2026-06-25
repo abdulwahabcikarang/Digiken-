@@ -1,8 +1,13 @@
 import { motion } from "motion/react";
+import { Helmet } from "react-helmet-async";
 
 export function About() {
   return (
     <div className="container mx-auto px-4 max-w-3xl py-12">
+      <Helmet>
+        <title>Tentang Digiken | Abdul Wahab</title>
+        <meta name="description" content="Kenali Abdul Wahab, founder Digiken. Seorang pengembang web dan analis data yang berfokus membangun solusi digital relevan dengan kebutuhan pengguna." />
+      </Helmet>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Clock } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 export function Notes() {
   const dummyNotes = [
@@ -22,6 +23,10 @@ export function Notes() {
 
   return (
     <div className="container mx-auto px-4 max-w-3xl py-12">
+      <Helmet>
+        <title>Catatan & Pembelajaran | Digiken</title>
+        <meta name="description" content="Baca catatan, eksplorasi teknologi, dan pelajaran yang didapat selama perjalanan membangun produk digital di Digiken." />
+      </Helmet>
       <div className="mb-12 cursor-default">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Catatan & Pembelajaran</h1>
         <p className="text-lg text-muted-foreground">

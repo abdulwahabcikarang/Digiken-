@@ -1,10 +1,16 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Blocks, Lightbulb, Link as LinkIcon, Sprout } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 export function Home() {
   return (
     <div className="container mx-auto px-4 max-w-5xl py-12 md:py-20">
+      <Helmet>
+        <title>Digiken - Digital Kenangan | Solusi Web & Aplikasi</title>
+        <meta name="description" content="Digiken (Digital Kenangan) membangun aplikasi web, website, alat produktivitas, dan berbagai solusi digital untuk memecahkan masalah nyata." />
+      </Helmet>
+
       {/* Hero Section */}
       <section className="flex flex-col md:flex-row items-center gap-12 mb-24 cursor-default">
         <motion.div

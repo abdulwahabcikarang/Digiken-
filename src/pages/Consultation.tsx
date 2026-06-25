@@ -1,10 +1,15 @@
 import { motion } from "motion/react";
 import { Coffee, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 export function Consultation() {
   return (
     <div className="container mx-auto px-4 max-w-3xl py-12 md:py-20 text-center">
+      <Helmet>
+        <title>Konsultasi Solusi Digital | Digiken</title>
+        <meta name="description" content="Diskusikan kebutuhan sistem dan solusi digital Anda bersama Digiken. Terbuka untuk konsultasi dan pembuatan aplikasi web." />
+      </Helmet>
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
