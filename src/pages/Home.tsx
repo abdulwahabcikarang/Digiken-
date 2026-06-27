@@ -61,7 +61,7 @@ export function Home() {
           className="flex flex-col items-center gap-4"
         >
           <div className="size-48 md:size-64 rounded-2xl bg-muted border border-border overflow-hidden shadow-sm flex items-center justify-center bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950 dark:to-zinc-900">
-             <img src="/Profil.png" alt="Abdul Wahab" className="w-full h-full object-cover" />
+             <img src="/profil.jpg" alt="Abdul Wahab" className="w-full h-full object-cover" />
           </div>
           <div className="text-center">
             <h3 className="font-semibold text-lg">Abdul Wahab</h3>

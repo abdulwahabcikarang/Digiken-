@@ -2,11 +2,30 @@ import { motion } from "motion/react";
 import { Helmet } from "react-helmet-async";
 
 export function About() {
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Abdul Wahab",
+      "jobTitle": "Founder & Builder",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Digiken"
+      },
+      "alumniOf": "Teknik Informatika",
+      "description": "Abdul Wahab adalah pendiri Digiken, seorang pengembang perangkat lunak dan analis data yang berfokus membangun solusi digital relevan dengan kebutuhan pengguna."
+    }
+  };
+
   return (
     <div className="container mx-auto px-4 max-w-3xl py-12">
       <Helmet>
         <title>Tentang Digiken | Abdul Wahab</title>
         <meta name="description" content="Kenali Abdul Wahab, founder Digiken. Seorang pengembang web dan analis data yang berfokus membangun solusi digital relevan dengan kebutuhan pengguna." />
+        <script type="application/ld+json">
+          {JSON.stringify(aboutSchema)}
+        </script>
       </Helmet>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -32,7 +51,7 @@ export function About() {
 
         <section className="flex flex-col md:flex-row gap-8 items-start">
           <div className="w-40 h-40 md:w-48 md:h-48 shrink-0 rounded-2xl bg-gradient-to-br from-green-100 to-green-50 dark:from-green-950 dark:to-zinc-900 border border-border flex items-center justify-center text-5xl shadow-sm overflow-hidden">
-            <img src="/Profil.png" alt="Abdul Wahab" className="w-full h-full object-cover" />
+            <img src="/profil.jpg" alt="Abdul Wahab" className="w-full h-full object-cover" />
           </div>
           <div className="space-y-4 flex-1">
             <div>
