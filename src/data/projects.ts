@@ -1,4 +1,4 @@
-import { Book, CheckSquare, Calendar, Wrench, Wallet, Construction, Library } from "lucide-react";
+import { Book, CheckSquare, Calendar, Wrench, Wallet, Construction, Library, Factory } from "lucide-react";
 import React from "react";
 
 export interface ProjectData {
@@ -82,38 +82,32 @@ export const PROJECTS: ProjectData[] = [
     ]
   },
   {
-    id: "event-hub",
-    title: "Event Hub",
-    iconName: "Calendar",
-    problem: "Komunitas lokal tidak memiliki wadah terpusat untuk membagikan jadwal acara.",
-    solution: "Platform berbagi acara komunitas dengan fitur RSVP dan pengingat jadwal.",
-    tags: ["Next.js", "PostgreSQL", "Tailwind"],
-    mockupImage: "https://placehold.co/1200x800/e2e8f0/475569?text=Mockup+Event+Hub"
-  },
-  {
-    id: "daily-expense",
-    title: "Daily Expense Tracker",
-    iconName: "Wallet",
-    problem: "Pencatatan pengeluaran harian sering terlupakan karena aplikasi yang rumit.",
-    solution: "Aplikasi pencatat pengeluaran minimalis dengan input sekali klik dan grafik sederhana.",
-    tags: ["Vue", "Chart.js", "Firebase"],
-    mockupImage: "https://placehold.co/1200x800/e2e8f0/475569?text=Mockup+Expense+Tracker"
-  },
-  {
-    id: "service-desk",
-    title: "IT Service Desk Minimalist",
-    iconName: "Wrench",
-    problem: "Karyawan kesulitan melacak status tiket bantuan IT mereka.",
-    solution: "Sistem tiket bantuan sederhana dengan notifikasi email dan pelacakan status transparan.",
-    tags: ["Express", "React", "MongoDB"],
-    mockupImage: "https://placehold.co/1200x800/e2e8f0/475569?text=Mockup+Service+Desk"
-  },
-  {
-    id: "coming-soon",
-    title: "Proyek Mendatang",
-    iconName: "Construction",
-    problem: "Terus mengeksplorasi masalah baru untuk dipecahkan.",
-    solution: "Menyiapkan berbagai solusi digital inovatif lainnya.",
-    tags: ["Research", "Development", "Design"],
+    id: "monitoring-dust-collector",
+    title: "Monitoring Dust Collector",
+    iconName: "Factory",
+    problem: "Pabrik mengalami kesulitan dalam memonitor kapasitas silo penampung limbah secara akurat. Kendala utama yang menyebabkan monitoring manual sering meleset adalah fluktuasi massa jenis material yang terus berubah-ubah, sehingga kalkulasi volume debu dan trim dari mesin potong, alur, dan amplas menjadi tidak valid.",
+    solution: "Membangun sistem terintegrasi yang memungkinkan input sampel massa jenis secara berkala untuk menyesuaikan hitungan otomatis. Aplikasi akan mengkalkulasi selisih dimensi awal dan akhir material (master data) saat diproses, lalu mengubahnya menjadi berat sisa debu/trim secara akurat menuju visualisasi silo.",
+    about: "Aplikasi berbasis web untuk memonitor dan mengkalkulasi akumulasi limbah produksi (debu dan trim) ke dalam silo secara real-time. Aplikasi ini membantu pabrik melacak sisa material dari berbagai mesin (Potong, Alur, Amplas) berdasarkan spesifikasi item dan dimensi pemotongan.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Zustand (State Management)", "Lucide React (Icons)"],
+    mockupImage: "/monitoring dust ss (1).jpg",
+    demoLink: "https://monitoring-dust-collektor.digiken.web.id/",
+    screenshots: [
+      "/monitoring dust mockup.jpg",
+      "/monitoring dust ss (2).jpg",
+      "/monitoring dust ss (3).jpg",
+      "/monitoring dust ss (4).jpg"
+    ],
+    results: [
+      "Meningkatkan akurasi estimasi daya tampung silo berkat pendekatan kalkulasi massa jenis yang dinamis.",
+      "Mencegah masalah silo penuh (overcapacity) yang tidak terduga berkat indikator visual dan level kritis pada dasbor.",
+      "Proses otomatisasi siap pakai: Tinggal disinkronkan pada laporan produksi, maka aplikasi bisa berjalan secara otomatis tanpa input manual ganda."
+    ],
+    features: [
+      { title: "Dasbor Monitoring Real-time", description: "Visualisasi kapasitas silo dengan indikator visual dan persentase secara langsung, lengkap dengan daftar riwayat transaksi terbaru." },
+      { title: "Kalkulasi Massa Jenis Dinamis", description: "Menghitung dan memperbarui massa jenis material berdasarkan sampel aktual agar estimasi sisa produksi (debu/trim) menjadi jauh lebih akurat." },
+      { title: "Manajemen Master Data", description: "Penyimpanan data komprehensif terkait spesifikasi produk, dimensi awal dan akhir, hingga konfigurasi mata pisau dan alur pemotongan mesin." },
+      { title: "Sistem Input Produksi", description: "Pencatatan aktivitas produksi harian berdasarkan shift dan jenis mesin yang secara otomatis mengonversi total palet/lembar menjadi tonase debu." },
+      { title: "Ekspor & Impor Data", description: "Fitur pencadangan data (backup) secara penuh menggunakan file JSON, memastikan keamanan data historis dan kemudahan demonstrasi." }
+    ]
   }
 ];

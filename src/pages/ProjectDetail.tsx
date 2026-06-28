@@ -1,16 +1,30 @@
+import { useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
-import { motion } from "motion/react";
-import { ArrowLeft, ExternalLink, CheckCircle2 } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import { ArrowLeft, ExternalLink, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { PROJECTS } from "../data/projects";
 
 export function ProjectDetail() {
   const { id } = useParams();
   const project = PROJECTS.find((p) => p.id === id);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   if (!project) {
     return <Navigate to="/proyek" replace />;
   }
+
+  const handleNextImage = () => {
+    if (project.screenshots) {
+      setCurrentImageIndex((prev) => (prev + 1) % project.screenshots.length);
+    }
+  };
+
+  const handlePrevImage = () => {
+    if (project.screenshots) {
+      setCurrentImageIndex((prev) => (prev - 1 + project.screenshots.length) % project.screenshots.length);
+    }
+  };
 
   return (
     <div className="container mx-auto px-4 max-w-4xl py-12">
@@ -81,11 +95,50 @@ export function ProjectDetail() {
           {project.screenshots && project.screenshots.length > 0 && (
             <section className="space-y-6">
               <h2 className="text-2xl font-bold tracking-tight">Screenshot / Mockup</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {project.screenshots.map((img, idx) => (
-                  <div key={idx} className="rounded-2xl overflow-hidden border border-border bg-muted/30 shadow-sm">
-                    <img src={img} alt={`Screenshot ${idx + 1}`} className="w-full h-auto object-cover" />
-                  </div>
+              <div className="relative rounded-2xl overflow-hidden border border-border bg-muted/30 shadow-sm aspect-[4/3] sm:aspect-video group">
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={currentImageIndex}
+                    src={project.screenshots[currentImageIndex]}
+                    alt={`Screenshot ${currentImageIndex + 1}`}
+                    className="absolute inset-0 w-full h-full object-contain bg-black/5"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </AnimatePresence>
+
+                {/* Navigation Buttons */}
+                <div className="absolute inset-0 flex items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <button
+                    onClick={handlePrevImage}
+                    className="p-2 rounded-full bg-background/80 hover:bg-background border border-border shadow-sm text-foreground transition-colors backdrop-blur-sm"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft size={24} />
+                  </button>
+                  <button
+                    onClick={handleNextImage}
+                    className="p-2 rounded-full bg-background/80 hover:bg-background border border-border shadow-sm text-foreground transition-colors backdrop-blur-sm"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight size={24} />
+                  </button>
+                </div>
+              </div>
+
+              {/* Indicators */}
+              <div className="flex justify-center gap-2 mt-4">
+                {project.screenshots.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentImageIndex(idx)}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      currentImageIndex === idx ? "w-8 bg-primary" : "w-2 bg-primary/30 hover:bg-primary/50"
+                    }`}
+                    aria-label={`Go to image ${idx + 1}`}
+                  />
                 ))}
               </div>
             </section>

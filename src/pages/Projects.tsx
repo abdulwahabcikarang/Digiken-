@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowRight, Book, CheckSquare, Calendar, Wrench, Wallet, Construction, Library } from "lucide-react";
+import { ArrowRight, Book, CheckSquare, Calendar, Wrench, Wallet, Construction, Library, Factory } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { PROJECTS } from "../data/projects";
@@ -11,7 +11,8 @@ const iconMap: Record<string, React.ReactNode> = {
   Wallet: <Wallet size={32} />,
   Wrench: <Wrench size={32} />,
   Construction: <Construction size={32} />,
-  Book: <Book size={32} />
+  Book: <Book size={32} />,
+  Factory: <Factory size={32} />
 };
 
 export function Projects() {
