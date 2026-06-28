@@ -21,6 +21,15 @@ export function Projects() {
       <Helmet>
         <title>Proyek Digital | Digiken</title>
         <meta name="description" content="Eksplorasi portofolio dan proyek digital dari Digiken. Aplikasi web, alat produktivitas, dan solusi teknologi yang dibangun." />
+        <meta property="og:title" content="Proyek Digital | Digiken" />
+        <meta property="og:description" content="Eksplorasi portofolio dan proyek digital dari Digiken. Aplikasi web, alat produktivitas, dan solusi teknologi yang dibangun." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={window.location.href} />
+        <meta property="og:image" content={`${window.location.origin}/logo.png`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Proyek Digital | Digiken" />
+        <meta name="twitter:description" content="Eksplorasi portofolio dan proyek digital dari Digiken. Aplikasi web, alat produktivitas, dan solusi teknologi yang dibangun." />
+        <meta name="twitter:image" content={`${window.location.origin}/logo.png`} />
       </Helmet>
       <div className="mb-12 cursor-default">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Proyek Digital</h1>

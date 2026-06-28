@@ -23,6 +23,15 @@ export function About() {
       <Helmet>
         <title>Tentang Digiken | Abdul Wahab</title>
         <meta name="description" content="Kenali Abdul Wahab, founder Digiken. Seorang pengembang web dan analis data yang berfokus membangun solusi digital relevan dengan kebutuhan pengguna." />
+        <meta property="og:title" content="Tentang Digiken | Abdul Wahab" />
+        <meta property="og:description" content="Kenali Abdul Wahab, founder Digiken. Seorang pengembang web dan analis data yang berfokus membangun solusi digital relevan dengan kebutuhan pengguna." />
+        <meta property="og:type" content="profile" />
+        <meta property="og:url" content={window.location.href} />
+        <meta property="og:image" content={`${window.location.origin}/profil.jpg`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Tentang Digiken | Abdul Wahab" />
+        <meta name="twitter:description" content="Kenali Abdul Wahab, founder Digiken. Seorang pengembang web dan analis data yang berfokus membangun solusi digital relevan dengan kebutuhan pengguna." />
+        <meta name="twitter:image" content={`${window.location.origin}/profil.jpg`} />
         <script type="application/ld+json">
           {JSON.stringify(aboutSchema)}
         </script>

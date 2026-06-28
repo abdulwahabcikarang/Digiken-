@@ -42,6 +42,15 @@ export function Contact() {
       <Helmet>
         <title>Kontak | Digiken</title>
         <meta name="description" content="Terhubung dengan Digiken. Hubungi via Email, WhatsApp, atau temukan kami di media sosial." />
+        <meta property="og:title" content="Kontak | Digiken" />
+        <meta property="og:description" content="Terhubung dengan Digiken. Hubungi via Email, WhatsApp, atau temukan kami di media sosial." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={window.location.href} />
+        <meta property="og:image" content={`${window.location.origin}/logo.png`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Kontak | Digiken" />
+        <meta name="twitter:description" content="Terhubung dengan Digiken. Hubungi via Email, WhatsApp, atau temukan kami di media sosial." />
+        <meta name="twitter:image" content={`${window.location.origin}/logo.png`} />
       </Helmet>
       <div className="text-center mb-12 cursor-default">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Terhubung</h1>

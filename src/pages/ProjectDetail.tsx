@@ -31,6 +31,15 @@ export function ProjectDetail() {
       <Helmet>
         <title>{project.title} | Portofolio Digiken</title>
         <meta name="description" content={project.solution} />
+        <meta property="og:title" content={`${project.title} | Portofolio Digiken`} />
+        <meta property="og:description" content={project.solution} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={window.location.href} />
+        {project.mockupImage && <meta property="og:image" content={`${window.location.origin}${project.mockupImage}`} />}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${project.title} | Portofolio Digiken`} />
+        <meta name="twitter:description" content={project.solution} />
+        {project.mockupImage && <meta name="twitter:image" content={`${window.location.origin}${project.mockupImage}`} />}
       </Helmet>
 
       <motion.div

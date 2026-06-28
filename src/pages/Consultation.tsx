@@ -37,6 +37,15 @@ export function Consultation() {
       <Helmet>
         <title>Konsultasi Solusi Digital | Digiken</title>
         <meta name="description" content="Diskusikan kebutuhan sistem dan solusi digital Anda bersama Digiken. Terbuka untuk konsultasi dan pembuatan aplikasi web." />
+        <meta property="og:title" content="Konsultasi Solusi Digital | Digiken" />
+        <meta property="og:description" content="Diskusikan kebutuhan sistem dan solusi digital Anda bersama Digiken. Terbuka untuk konsultasi dan pembuatan aplikasi web." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={window.location.href} />
+        <meta property="og:image" content={`${window.location.origin}/logo.png`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Konsultasi Solusi Digital | Digiken" />
+        <meta name="twitter:description" content="Diskusikan kebutuhan sistem dan solusi digital Anda bersama Digiken. Terbuka untuk konsultasi dan pembuatan aplikasi web." />
+        <meta name="twitter:image" content={`${window.location.origin}/logo.png`} />
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>

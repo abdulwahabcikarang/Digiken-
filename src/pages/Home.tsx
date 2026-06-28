@@ -9,6 +9,15 @@ export function Home() {
       <Helmet>
         <title>Digiken - Digital Kenangan | Solusi Web & Aplikasi</title>
         <meta name="description" content="Digiken (Digital Kenangan) membangun aplikasi web, website, alat produktivitas, dan berbagai solusi digital untuk memecahkan masalah nyata." />
+        <meta property="og:title" content="Digiken - Digital Kenangan | Solusi Web & Aplikasi" />
+        <meta property="og:description" content="Digiken (Digital Kenangan) membangun aplikasi web, website, alat produktivitas, dan berbagai solusi digital untuk memecahkan masalah nyata." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={window.location.href} />
+        <meta property="og:image" content={`${window.location.origin}/logo.png`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Digiken - Digital Kenangan | Solusi Web & Aplikasi" />
+        <meta name="twitter:description" content="Digiken (Digital Kenangan) membangun aplikasi web, website, alat produktivitas, dan berbagai solusi digital untuk memecahkan masalah nyata." />
+        <meta name="twitter:image" content={`${window.location.origin}/logo.png`} />
       </Helmet>
 
       {/* Hero Section */}

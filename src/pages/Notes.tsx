@@ -26,6 +26,15 @@ export function Notes() {
       <Helmet>
         <title>Catatan & Pembelajaran | Digiken</title>
         <meta name="description" content="Baca catatan, eksplorasi teknologi, dan pelajaran yang didapat selama perjalanan membangun produk digital di Digiken." />
+        <meta property="og:title" content="Catatan & Pembelajaran | Digiken" />
+        <meta property="og:description" content="Baca catatan, eksplorasi teknologi, dan pelajaran yang didapat selama perjalanan membangun produk digital di Digiken." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={window.location.href} />
+        <meta property="og:image" content={`${window.location.origin}/logo.png`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Catatan & Pembelajaran | Digiken" />
+        <meta name="twitter:description" content="Baca catatan, eksplorasi teknologi, dan pelajaran yang didapat selama perjalanan membangun produk digital di Digiken." />
+        <meta name="twitter:image" content={`${window.location.origin}/logo.png`} />
       </Helmet>
       <div className="mb-12 cursor-default">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Catatan & Pembelajaran</h1>
